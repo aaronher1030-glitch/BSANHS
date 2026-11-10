@@ -1,0 +1,122 @@
+:root {
+  /* Primitives — navy */
+  --navy-950: #02133e;
+  --navy-900: #061a4a;
+  --navy-850: #141953;
+  --navy-800: #08205d;
+  --navy-700: #0d2a6e;
+  --navy-line: #1b3570;
+  --hero-top: #091449;
+
+  /* Primitives — mint */
+  --mint-100: #d0e0e3;
+  --mint-200: #bfd2d6;
+
+  /* Primitives — gold */
+  --gold-300: #e8c98f;
+  --gold-500: #c9a227;
+  --gold-600: #b98a4a;
+
+  /* Neutrals */
+  --paper: #f9f9f9;
+  --white: #ffffff;
+  --ink: #0a1c3d;
+  --ink-soft: #2b4166;
+
+  /* Semantic — surfaces and text */
+  --bg-page: var(--navy-950);
+  --bg-title: var(--navy-850);
+  --bg-panel: var(--navy-800);
+  --bg-band: var(--mint-100);
+  --bg-bar: var(--paper);
+  --text-dark: var(--paper);
+  --text-light: var(--ink);
+  --text-muted-dark: #b9c6dd;
+  --text-muted-light: #3a4f70;
+  --link-underline-dark: color-mix(in srgb, var(--gold-300) 70%, transparent);
+  --link-underline-light: color-mix(in srgb, var(--navy-950) 55%, transparent);
+  --border-dark: rgba(249, 249, 249, 0.16);
+  --border-strong-dark: color-mix(in srgb, var(--paper) 45%, transparent);
+  --border-light: rgba(10, 28, 61, 0.16);
+  --accent: var(--gold-500);
+  --accent-soft: var(--gold-300);
+  --focus-on-dark: var(--gold-300);
+  --focus-on-light: var(--navy-950);
+  --on-accent: var(--navy-950);
+
+  /* Semantic — hero field. The beams and glows are defined here so the
+     component sheet carries no literal colour. */
+  --glow-blue: rgba(43, 84, 178, 0.55);
+  --glow-blue-deep: rgba(26, 63, 150, 0.42);
+  --glow-gold: rgba(201, 162, 39, 0.28);
+  --beam-edge: rgba(185, 138, 74, 0.1);
+  --beam-tail: rgba(232, 201, 143, 0.15);
+
+  /* Semantic — shell hairlines and the scrolled masthead. */
+  --masthead-bg: color-mix(in srgb, var(--navy-950) 94%, transparent);
+  --rule-paper: color-mix(in srgb, var(--paper) 85%, transparent);
+  --hairline-paper: color-mix(in srgb, var(--paper) 55%, transparent);
+
+  /* Type */
+  --font-display: "Gentium Book Plus", Gentium, Georgia, serif;
+  --font-wordmark: "Montserrat", "Archivo Black", system-ui, sans-serif;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+
+  --text-xs: 0.8125rem;   /* 13 */
+  --text-sm: 0.875rem;    /* 14 */
+  --text-base: 1rem;      /* 16 */
+  --text-lg: 1.125rem;    /* 18 */
+  --text-xl: 1.375rem;    /* 22 */
+  --text-h3: 1.1875rem;   /* 19 */
+  --text-h2: clamp(1.5rem, 1.9vw, 1.875rem); /* 24 → 30 */
+  --text-h1: clamp(2rem, 3.2vw, 2.833rem); /* 32 → 45.33 */
+  --text-wordmark: clamp(2.75rem, 6.4vw, 5.25rem); /* 44 → 84 */
+
+  /* Space — 4px base */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Layout */
+  --page-max: 1152px;
+  --gutter: clamp(1.25rem, 5vw, 1.5rem);
+  --measure: 68ch;
+  --header-h: 72px;
+  --hero-min: clamp(560px, calc(100svh - var(--header-h)), 980px);
+  --title-h: clamp(200px, 18vw, 240px);
+  --radius-sm: 3px;
+  --radius-md: 8px;
+  --shadow-panel: 0 18px 40px -24px rgba(2, 19, 62, 0.7);
+  --shadow-card: 0 26px 50px -34px rgba(2, 19, 62, 0.8);
+  --shadow-lift: 0 18px 32px -22px rgba(2, 19, 62, 0.85);
+
+  /* Motion — one shared tempo. Press and hover stay at or under 150ms;
+     entrances get the 300ms register; the hero draw is the one long beat. */
+  --dur-press: 150ms;
+  --dur-fast: 180ms;
+  --dur-base: 300ms;
+  --dur-slow: 700ms;
+  --reveal-rise: 12px;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --ease-card: cubic-bezier(0.23, 1, 0.32, 1);
+  /* On-screen movement (drifting slips, seal bob, plate breath) starts and
+     ends gently. Without this token the shorthand resolves to `none`. */
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  /* Ambient motion is slow on purpose: it should be noticed only after a
+     beat, never compete with reading. */
+  --dur-ambient: 26s;
+  --dur-marquee: 58s;
+
+  /* Surface textures. The grain is the base; the grid turns the navy bands
+     into a drafting sheet, and the fibre gives the mint its paper tooth. */
+  --grain: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIj48ZmlsdGVyIGlkPSJnIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC44MiIgbnVtT2N0YXZlcz0iMyIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjxmZUNvbG9yTWF0cml4IHR5cGU9InNhdHVyYXRlIiB2YWx1ZXM9IjAiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgZmlsdGVyPSJ1cmwoI2cpIi8+PC9zdmc+");
+  --tex-grid: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc2NCcgaGVpZ2h0PSc2NCc+PHBhdGggZD0nTTY0IDBIMHY2NCcgZmlsbD0nbm9uZScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utb3BhY2l0eT0nLjU1JyBzdHJva2Utd2lkdGg9JzEnLz48Y2lyY2xlIGN4PSczMicgY3k9JzMyJyByPScxJyBmaWxsPScjZmZmZmZmJyBmaWxsLW9wYWNpdHk9Jy41Jy8+PC9zdmc+");
+  --tex-fibre: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNDAnIGhlaWdodD0nMjQwJz48ZmlsdGVyIGlkPSdmJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC45IDAuMDM1JyBudW1PY3RhdmVzPScyJyBzdGl0Y2hUaWxlcz0nc3RpdGNoJy8+PGZlQ29sb3JNYXRyaXggdHlwZT0nc2F0dXJhdGUnIHZhbHVlcz0nMCcvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPScyNDAnIGhlaWdodD0nMjQwJyBmaWx0ZXI9J3VybCgjZiknLz48L3N2Zz4=");
+}

@@ -1,0 +1,17 @@
+/* ------------------------------------------------------------------ *
+ * Breakpoints. Base sheets describe the wide layout; this file only
+ * narrows it. Masthead, navigation and footer rules land in Task 2, so
+ * only the primitives that already exist are tuned here.
+ * ------------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+  .band {
+    padding-block: clamp(2rem, 7vw, 2.75rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-bar {
+    padding-inline: var(--space-4);
+  }
+}

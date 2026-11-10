@@ -1,0 +1,37 @@
+{
+  "name": "sslg",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && tsc -p functions --noEmit && vite build && node scripts/generate-seo.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "sync:drive": "node scripts/sync-drive.mjs",
+    "pages:dev": "npm run build && wrangler pages dev dist",
+    "deploy": "npm run sync:drive && npm run build && wrangler pages deploy dist --project-name bsanhs --branch main"
+  },
+  "dependencies": {
+    "@fontsource/gentium-book-plus": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261104.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "jsdom": "^29.1.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.158.0"
+  }
+}

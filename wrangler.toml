@@ -1,0 +1,7 @@
+name = "bsanhs"
+compatibility_date = "2026-11-08"
+pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "792d4c7641ae42418951cace7e0bc5d4"
